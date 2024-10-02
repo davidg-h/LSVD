@@ -1,0 +1,22 @@
+# general
+pip
+setuptools
+wheel
+
+# hugging face
+huggingface_hub
+sentencepiece # needed for older models as sentencepiece was removed as a required dependency from transformers
+datasets
+accelerate
+evaluate
+transformers[torch]
+datasets[audio]
+datasets[vision]
+diffusers[torch]
+ctransformers[cuda] # loading quantiziced models
+
+# pytorch(https://pytorch.org/) with cuda
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch 
+torchvision 
+torchaudio
