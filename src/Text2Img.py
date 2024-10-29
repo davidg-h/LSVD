@@ -12,6 +12,7 @@ model_id = "stabilityai/stable-diffusion-2"
 scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
 pipe = StableDiffusionPipeline.from_pretrained(model_id, scheduler=scheduler, torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
+pipe.enable_model_cpu_offload()
 
 prompt = "a photo of an astronaut riding a horse on mars"
 image = pipe(prompt).images[0]
