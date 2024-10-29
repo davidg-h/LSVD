@@ -2,7 +2,7 @@
 
 ---
 
-**_Loading the requirements.txt over [pip install -r requirements.txt](#install-get-packagedependencies-in-virtuel-env) after creating the .venv is recommended!_**
+**_Loading the requirements.txt over pip install -r requirements.txt after creating the .venv is recommended!_**
 
 1. Step: [Install Python](https://www.python.org/downloads/)
 
@@ -18,7 +18,7 @@
 
    ![alternative text](docs_images/Screenshot-virtualenv.png)
 
-4. Step: Update pip (optional: if you have problems with the packages create an empty .venv and run this command before [installing the requirements](#install-get-packagedependencies-in-virtuel-env))
+4. Step: Update pip (optional: if you have problems with the packages create an empty .venv and run this command before installing the requirements)
 
    In the terminal:
 
@@ -52,7 +52,7 @@ Set-ExecutionPolicy Unrestricted -Force
 
 This overwrites the type of execution of scripts
 
-### Deactivation and revert changes
+## Deactivation and revert changes
 
 ```sh
 # Before Reverting the ExecutionPolicy deactivate the virtual environment in the terminal
