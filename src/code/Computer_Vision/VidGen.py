@@ -137,7 +137,7 @@ class VideoGenerator:
                       ).frames[0]
         export_to_video(frames,os.path.join(self.reference_path, "svd.mp4"), fps=self.fps)
         
-        self.cleanup()
+        self.__cleanup()
         
         print(f"Video generated successfully with StableVideoDiffusion-Pipeline in: {self.reference_path}")
         return True
