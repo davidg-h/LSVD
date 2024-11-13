@@ -31,7 +31,7 @@ def text2audio(prompt, output_path):
 
     # Output the final audio into a .wav file
     sampling_rate = model.config.audio_encoder.sampling_rate
-    scipy.io.wavfile.write(os.join(output_path, "musicgen_out.wav"), rate=sampling_rate, data=audio_values[0, 0].numpy())
+    scipy.io.wavfile.write(os.path.join(output_path, "musicgen_out.wav"), rate=sampling_rate, data=audio_values[0, 0].numpy())
     
     print(f"Audio generated successfully in: {output_path}")
     return True, edited_user_input
