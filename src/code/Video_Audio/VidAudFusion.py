@@ -1,6 +1,10 @@
 import os
 import subprocess
 
+#
+# Combines the video and audio output into one complete video
+#
+
 def install_ffmpeg():
     try:
         # Update the package list
@@ -23,8 +27,3 @@ def fuse_video_audio(video_file, audio_file, output_file):
         print(f"Successfully merged into {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while merging video and audio: {e}")
-
-if __name__ == "__main__":
-    install_ffmpeg()
-    # Example usage
-    fuse_video_audio("input_video.mp4", "input_audio.wav", "output_video.mp4")
