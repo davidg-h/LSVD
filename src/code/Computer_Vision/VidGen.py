@@ -51,7 +51,7 @@ class VideoGenerator:
         
     def I2VGen(self):
         image_url = (
-            os.join(self.reference_path,"reference.png")
+            os.path.join(self.reference_path,"reference.png")
             #"https://huggingface.co/datasets/diffusers/docs-images/resolve/main/i2vgen_xl_images/img_0009.png" # hf example
         )
         image = load_image(image_url).convert("RGB")
@@ -75,7 +75,7 @@ class VideoGenerator:
             guidance_scale=9.0,
             generator=generator,
         ).frames[0]
-        export_to_video(frames, os.join(self.reference_path,"i2v.mp4"), fps=self.fps)
+        export_to_video(frames, os.path.join(self.reference_path,"i2v.mp4"), fps=self.fps)
         
         self.__cleanup()
         
@@ -83,7 +83,7 @@ class VideoGenerator:
         return True
     
     def CogVideoX(self):
-        image = load_image(image= os.join(self.reference_path,"reference.png"))
+        image = load_image(image= os.path.join(self.reference_path,"reference.png"))
         
         self.pipe = CogVideoXImageToVideoPipeline.from_pretrained(
             "THUDM/CogVideoX-5b-I2V",
@@ -107,7 +107,7 @@ class VideoGenerator:
             generator=torch.Generator(device="cuda").manual_seed(42),
         ).frames[0]
 
-        export_to_video(video, os.join(self.reference_path, "cogVidX.mp4"), fps=self.fps)
+        export_to_video(video, os.path.join(self.reference_path, "cogVidX.mp4"), fps=self.fps)
         
         self.__cleanup()
         
@@ -116,7 +116,7 @@ class VideoGenerator:
     
     def StableVideoDiffusion(self):
         image = load_image(
-            os.join(self.reference_path,"reference.png")
+            os.path.join(self.reference_path,"reference.png")
             #"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/svd/rocket.png"
             ) # hf example
         image = image.resize((1024, 576))
@@ -135,7 +135,7 @@ class VideoGenerator:
                       decode_chunk_size=8, 
                       generator=generator
                       ).frames[0]
-        export_to_video(frames,os.join(self.reference_path, "svd.mp4"), fps=self.fps)
+        export_to_video(frames,os.path.join(self.reference_path, "svd.mp4"), fps=self.fps)
         
         self.cleanup()
         
@@ -170,7 +170,7 @@ class VideoGenerator:
             generator=torch.Generator("cpu").manual_seed(49),
         )
         frames = output.frames[0]
-        export_to_video(frames, os.join(self.reference_path, "animateDiff.mp4"), fps=self.fps)
+        export_to_video(frames, os.path.join(self.reference_path, "animateDiff.mp4"), fps=self.fps)
 
         self.__cleanup()
         
@@ -189,7 +189,7 @@ class VideoGenerator:
             self.prompt,
             num_frames=self.num_frames,
             ).frames[0]
-        export_to_video(video_frames, os.join(self.reference_path,"modelscopet2v.mp4"), fps=self.fps)
+        export_to_video(video_frames, os.path.join(self.reference_path,"modelscopet2v.mp4"), fps=self.fps)
         
         self.__cleanup()
         

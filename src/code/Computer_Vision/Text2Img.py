@@ -18,7 +18,7 @@ def text2img(prompt, output_path):
 
     image = pipe(prompt).images[0]
 
-    image.save(os.join(output_path, "reference.png"))
+    image.save(os.path.join(output_path, "reference.png"))
 
     # cleanup
     pipe.to("cpu")
