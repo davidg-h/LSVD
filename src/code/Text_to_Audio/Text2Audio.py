@@ -15,7 +15,7 @@ def text2audio(prompt, output_path):
     labels_string = "mood: " + ", ".join([item['label'] for item in filtered_analysis])
     print(labels_string)
 
-    edited_user_input = "\n".join([userInput, labels_string])
+    edited_user_input = "\n".join([userInput, labels_string]) if len(filtered_analysis) > 0 else userInput
     print(edited_user_input)
 
     processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
