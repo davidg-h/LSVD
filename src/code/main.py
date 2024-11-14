@@ -31,7 +31,7 @@ generator = VidGen.VideoGenerator(path, new_prompt)
 generator.StableVideoDiffusion()
 # generator.ModelscopeT2V()
 audio = os.path.join(path, "musicgen_out.wav")
-video = os.path.join(path, "video file")
+video = os.path.join(path, "svd.mp4") # animateDiff.mp4
 output = os.path.join(path, "complete_out.mp4")
 
 print('merging audio and video...')
