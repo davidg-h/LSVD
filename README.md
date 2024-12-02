@@ -15,7 +15,7 @@ Visualize your ideas
 - [Install FFMPEG](https://www.ffmpeg.org/download.html)
 - [Virtual environment python](docs/Venv.md)
 
-## Juypiter Notebook in colab
+## Jupyter Notebook in google colab
 
 Add these commands to the beginning of your notebook to install all requirements and get the scripts in your google colabs
 
@@ -23,10 +23,10 @@ Add these commands to the beginning of your notebook to install all requirements
 # clone our repo and install requirements in colab
 %cd /content/
 !rm -rf LSVD
-!git clone -b computerVision https://github.com/davidg-h/LSVD.git
+!git clone https://github.com/davidg-h/LSVD.git
 %cd LSVD
 %pip install -r requirements.txt
 !apt install ffmpeg
 ```
 
-You can also just pull our [Inference.ipynb](src/Inference.ipynb) into colab. It contains the complete code of the project
+You can also just pull our [demo.ipynb](src/demo.ipynb) into colab. It contains the complete code of the project
