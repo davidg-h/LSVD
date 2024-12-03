@@ -20,3 +20,5 @@ ctransformers[cuda] # loading quantiziced models
 torch 
 torchvision 
 torchaudio
+
+scipy
